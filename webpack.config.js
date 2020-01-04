@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin'); //extrait le cs
 const TerserPlugin = require('terser-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require("path");
 const dev = process.env.NODE_ENV === "dev";
 
@@ -99,6 +100,13 @@ let cssLoaders = [
     config.plugins.push(new CleanWebpackPlugin({
       dry: false, //true = ne delete pas test juste
 
-    }))
+    }));
+    //plugins qui permet de generer une page en prod avec les bon hash du manifest.json
+    //template = prend une copie d'une page déjà existante et se base dessus.
+  
+    /*  config.plugins.push(new HtmlWebpackPlugin({
+      template: './src/view/template.php',
+    })); */
+    
   }
   module.exports = config;
