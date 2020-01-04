@@ -1,6 +1,57 @@
-body {
-  background: yellow; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
 
-h1 {
-  transform: translateY(50px); }
+html {
+  font: 62.5%;
+  color: #6F009F; }
+
+a:link {
+  text-decoration: none;
+  color: #6F009F; }
+
+li {
+  list-style: none; }
+
+header {
+  background: #C4C4C4;
+  padding: 0.8rem 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-size: 0.9rem; }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around; }
+  .header__left {
+    display: flex;
+    justify-content: center;
+    width: 250px; }
+    .header__left > ul > li:first-child {
+      display: flex;
+      align-items: center; }
+      .header__left > ul > li:first-child span {
+        margin-right: 2%; }
+    .header__left > ul > li:last-child {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .header__left > ul > li:last-child span {
+        margin-right: 2%; }
+  .header__right {
+    width: 110px; }
+    .header__right > ul {
+      display: flex;
+      justify-content: space-around; }
+    .header__right--linkledin {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 4%; }
+    .header__right--github {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
 

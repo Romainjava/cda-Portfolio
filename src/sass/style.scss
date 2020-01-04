@@ -1,7 +1,3 @@
-body{
-    background: yellow;
-}
-
-h1 {
-    transform: translateY(50px);
-}
+@import 'reset';
+@import "header";
+@import 'footer';

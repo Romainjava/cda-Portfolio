@@ -96,7 +96,7 @@ let cssLoaders = [
     config.plugins.push(new ManifestPlugin({
       fileName: 'my-manifest.json',
     }));
-    //clean avant la ré ecriture des fichier dans dist en prod
+    //clean les hash avant la ré ecriture des fichier dans dist en prod
     config.plugins.push(new CleanWebpackPlugin({
       dry: false, //true = ne delete pas test juste
 
@@ -106,7 +106,7 @@ let cssLoaders = [
   
     /*  config.plugins.push(new HtmlWebpackPlugin({
       template: './src/view/template.php',
-    })); */
-    
+    }));  */
+
   }
   module.exports = config;
