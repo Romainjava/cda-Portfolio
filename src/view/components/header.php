@@ -3,7 +3,7 @@
         <div class="header__left">
             <ul>
                 <li><span><img src="assets/icon/phone.png" alt="logo phone"></span>06 64 76 02 95</li>
-                <li><span><img src="assets/icon/mail.png" alt="logo mail"></span>vandamme.romain.pro@gmail.com</li>
+                <li><span><img src="assets/icon/mail.png" alt="logo mail"></span><strong>vandamme.romain.pro@gmail.com</strong></li>
             </ul>
         </div>
         <div class="header__right">
@@ -24,3 +24,20 @@
         </div>
     </div>
 </header>
+
+<section class="contact">
+    <div class="contact__left">
+        <div class="contact__left--logo">
+            <img src="assets/icon/LogoRVD.png" alt="Logo personnelRVD">
+        </div>
+
+        <div class="contact__left--text">
+            <span>RVD</span>
+            <span><strong>Concepteur d'application</strong></span>
+        </div>
+    </div>
+
+    <div class="contact__right">
+        <a href="#">Contact</a>
+    </div>
+</section>
