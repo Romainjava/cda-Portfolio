@@ -109,5 +109,31 @@ function animate() {
 document.addEventListener('DOMContentLoaded', function () {
     init();
     animate();
+
+    //== BURGER MENU ==//
+    const burger = document.querySelector('.footer__burger');
+    const burger_ul = document.querySelector('.footer__burger--list');
+    const burger_spanOne = document.querySelector('.footer__burger > :nth-child(1)');
+    const burger_spanTwo = document.querySelector('.footer__burger > :nth-child(2)');
+    const burger_spanThree = document.querySelector('.footer__burger > :nth-child(3)');
+
+    burger.addEventListener('click',function(e){
+        e.preventDefault();
+        if(!burger_ul.classList.contains('slideUp')){
+           burger_ul.classList.add('slideUp');           
+            burger_spanOne.style.top = '5%';
+            burger_spanOne.style.transform = 'rotate(50deg)';
+            burger_spanTwo.style.transform = 'rotate(-50deg)';
+            burger_spanThree.style.display = 'none';
+
+        }else {       
+            burger_ul.classList.remove('slideUp');    
+            burger_spanOne.style.top = '-10%';
+            burger_spanOne.style.transform = 'rotate(0)';
+            burger_spanTwo.style.transform = 'rotate(0)';
+            burger_spanThree.style.display = 'block';
+        }
+    })
+
 })
 
