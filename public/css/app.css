@@ -122,6 +122,7 @@ header {
 
 .rvdimage {
   display: flex;
+  width: 350px;
   justify-content: center;
   position: relative; }
   .rvdimage__image {
