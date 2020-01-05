@@ -41,3 +41,7 @@
         <a href="#">Contact</a>
     </div>
 </section>
+
+<section class="doMore">
+    <img class="doMore__img" src="assets/images/imagebgr.png" alt="Do More Image">
+</section>

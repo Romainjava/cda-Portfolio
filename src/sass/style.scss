@@ -1,3 +1,10 @@
+$blackColor: #000;
+$whiteColor: #ffffff;
+$headerColor: #C4C4C4;
+$titleColor: #57007D;
+$textColor: #6F009F;
+$titleFont: 'Pinyon Script', serif;
 @import 'reset';
 @import "header";
+@import 'presentation';
 @import 'footer';

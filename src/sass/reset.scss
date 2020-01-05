@@ -6,12 +6,12 @@
 
 html {
     font: 62.5%;
-    color: #6F009F;
+    color: $textColor;
 }
 
 a:link {
     text-decoration: none;
-    color: #6F009F;
+    color: $textColor;
 }
 
 li {

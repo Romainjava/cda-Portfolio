@@ -1,0 +1,58 @@
+.presentation {
+    display: block;
+    border-radius: 20px;
+    margin: 0 .6em;
+    padding: 0.5em 0;
+    position: relative;
+    transform: translateY(-50px);
+    background: #FFFFFF;
+    box-shadow: 0px 0px 12px rgba(111, 0, 159, 0.58);
+
+    &__title {
+        display: flex;
+        width: 80%;
+        margin-left: 5%;
+        color: $titleColor;
+        font-family: $titleFont;
+
+        &::before {
+            content: "";
+            width: 3px;
+            height: 18px;
+            margin-right: 2%;
+            position: relative;
+            transform: translateY(5px);
+            background: $textColor;
+        }
+    }
+
+    &__article {
+        margin: 0 2em;
+        color: $textColor;
+        line-height: 1.4;
+
+        &--first {
+            margin-bottom: 2%;
+        }
+    }
+}
+
+.rvdimage {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    &__image {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+        background: $whiteColor;
+    }
+
+    &__canvas{
+        position: absolute;
+        transform: translateY(-20px);
+        z-index: -1;
+    }
+}

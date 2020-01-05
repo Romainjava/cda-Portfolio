@@ -1,5 +1,5 @@
 header {
-    background: #C4C4C4;
+    background: $headerColor;
     padding: 0.8rem 0;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -65,7 +65,7 @@ header {
     display: grid;
     grid-template-columns: 70% 30%;
     margin: 0 1em;
-    padding: 0.8em 0;
+    padding: 0.2em 0;
 
     &__left {
         display: flex;
@@ -82,10 +82,11 @@ header {
 
             &>span:last-child {
                 font-size: 1em;
-                color: #000;
+                color: $blackColor;
             }
         }
     }
+
     &__right {
         display: flex;
         justify-content: center;
@@ -95,8 +96,13 @@ header {
         &>a {
             padding: 0.2em 0.8em;
             border-radius: 30px;
-            background: #6F009F;
-            color: #000;
+            background: $textColor;
+            color: $blackColor;
         }
     }
+}
+
+.doMore {
+    display: flex;
+    justify-content: center;
 }
