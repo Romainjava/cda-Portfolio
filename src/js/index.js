@@ -1,5 +1,4 @@
-var canvas = document.querySelector('#canvas');
-var ctx = canvas.getContext('2d');
+let ctx = null;
 const colors = [
     '#ffc107',
     '#844437',
@@ -9,27 +8,31 @@ const colors = [
 
 /**
  * renvoie une couleurs random
- * @param {tableau} colors 
+ * @param {tableau} colors
  */
 function randomColor(colors) {
     return colors[Math.floor(Math.random() * colors.length)];
 }
+
 /**
- * 
- * @param {int} min 
- * @param {int} max 
+ *
+ * @param {int} min
+ * @param {int} max
  */
 function randomIntFromRange(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
 /**
  * crée des particles
- * @param {int} x 
- * @param {int} y 
- * @param {int} radius 
- * @param {string} color 
+ * @param {ctx} ctx
+ * @param {int} x
+ * @param {int} y
+ * @param {int} radius
+ * @param {string} color
  */
-function Particle(x, y, radius, color) {
+function Particle(x, y, radius, color, ctx) {
+    this.ctx = ctx;
     this.x = x;
     this.y = y;
     this.radius = radius;
@@ -77,38 +80,43 @@ var heightinner = 240;
 //var dx = 4; //nom de variable utilisé pour la vélocité
 //var dy = 4;
 //particles en global
-var particles
+var particles;
 
 /**
  * instancie le nombre d'objet particles
  */
-function init() {
+function init(ctx) {
     particles = [];
     for (let i = 0; i < 50; i++) {
         //pour chaque new particle donne nous un new radius de 1 a 2
         //ce qui permet de donner un spawn de different size et rendre encore plus smooth
         const radius = (Math.random() * 2) + 1;
-        particles.push(new Particle(widthinner / 2, heightinner / 2, radius, randomColor(colors)));
+        particles.push(new Particle(widthinner / 2, heightinner / 2, radius, randomColor(colors), ctx));
     }
 }
+
 /**
  * refresh la frame avec le nombre d'objet
  */
 function animate() {
     requestAnimationFrame(animate);
-    //ctx.clearRect(0, 0, widthinner, heightinner); //refresh/reset la frame chaque seconde  
+    //ctx.clearRect(0, 0, widthinner, heightinner); //refresh/reset la frame chaque seconde
     //circle.update(); //ancienne animation
 
     ctx.fillStyle = 'rgba(255,255,255,0.05)';
-    ctx.fillRect(0, 0, widthinner, heightinner); //refresh/reset la frame chaque seconde 
+    ctx.fillRect(0, 0, widthinner, heightinner); //refresh/reset la frame chaque seconde
     particles.forEach(particle => {//crée chaque objet particle
         particle.update()
     });
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    init();
-    animate();
+    let canvas = document.querySelector('#canvas');
+    if (canvas !== null) {
+        ctx = canvas.getContext('2d');
+        init(ctx);
+        animate();
+    }
 
     //== BURGER MENU ==//
     const burger = document.querySelector('.footer__burger');
@@ -117,17 +125,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const burger_spanTwo = document.querySelector('.footer__burger > :nth-child(2)');
     const burger_spanThree = document.querySelector('.footer__burger > :nth-child(3)');
 
-    burger.addEventListener('click',function(e){
+    burger.addEventListener('click', function (e) {
         e.preventDefault();
-        if(!burger_ul.classList.contains('slideUp')){
-           burger_ul.classList.add('slideUp');           
+        if (!burger_ul.classList.contains('slideUp')) {
+            burger_ul.classList.add('slideUp');
             burger_spanOne.style.top = '5%';
             burger_spanOne.style.transform = 'rotate(50deg)';
             burger_spanTwo.style.transform = 'rotate(-50deg)';
             burger_spanThree.style.display = 'none';
 
-        }else {       
-            burger_ul.classList.remove('slideUp');    
+        } else {
+            burger_ul.classList.remove('slideUp');
             burger_spanOne.style.top = '-10%';
             burger_spanOne.style.transform = 'rotate(0)';
             burger_spanTwo.style.transform = 'rotate(0)';
@@ -135,5 +143,68 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     })
 
-})
+    //== Part realisation ==//
+    const r_btn = document.querySelectorAll(".btn");
+    const r_bloc = document.querySelectorAll('.realisation__bloc');
+    const r_trigger_modal = document.querySelectorAll('.realisation__bloc--btn');
+    const r_bloc_modal = document.querySelector('.realisation__modals');
+    const r_remove_modal = document.querySelectorAll('.realisation__modals--btn');
+    const r_modals_article = document.querySelectorAll('.realisation__modals--article');
+
+
+    r_trigger_modal.forEach(btn => {
+        btn.addEventListener('click', function () {
+            let target = "modal-" + btn.parentNode.getAttribute('data-id');
+
+            r_bloc_modal.classList.add('m-active');
+            r_modals_article.forEach(article => {
+                if (article.id === target) {
+                    article.classList.remove('is-none');
+                    article.classList.add('m-active');
+                } else {
+                    article.classList.add('is-none');
+                    article.classList.remove('m-active');
+                }
+            })
+
+        });
+    });
+
+    r_remove_modal.forEach(btn => {
+        btn.addEventListener('click', function () {
+            r_bloc_modal.classList.remove('m-active');
+            r_modals_article.forEach(article => {
+                article.classList.remove('m-active');
+                article.classList.add('is-none');
+            });
+
+        });
+    });
+
+    r_btn.forEach(btn => {
+        btn.addEventListener('click', function (event) {
+            event.preventDefault();
+            //supprime la class active sur les btn qui l'ont
+            document.querySelectorAll(".btn.active").forEach(b => {
+                    b.classList.remove('active');
+                }
+            );
+            btn.classList.add('active');
+            let target = this.getAttribute("data-target");
+            r_bloc.forEach(element => {
+                //me permet de switch les réalisation avec les boutons du home caroussel
+                //J'ajoute un effet css dessus
+                if (element.getAttribute('data-id') === target) {
+                    element.classList.remove('target');
+                    element.classList.add('slideFromRight');
+                } else {
+                    element.classList.remove('slideFromRight');
+                    element.classList.add('target');
+                }
+            })
+        })
+    })
+
+
+});
 
