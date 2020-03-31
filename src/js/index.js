@@ -154,6 +154,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     r_trigger_modal.forEach(btn => {
         btn.addEventListener('click', function () {
+            //recupére l'attribut du parent
             let target = "modal-" + btn.parentNode.getAttribute('data-id');
 
             r_bloc_modal.classList.add('m-active');
@@ -172,7 +173,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     r_remove_modal.forEach(btn => {
         btn.addEventListener('click', function () {
-            r_bloc_modal.classList.remove('m-active');
+            setTimeout(function () {
+                r_bloc_modal.classList.remove('m-active');
+            },1000);
             r_modals_article.forEach(article => {
                 article.classList.remove('m-active');
                 article.classList.add('is-none');

@@ -106,7 +106,6 @@
     left: 0;
     background: rgba(0, 0, 0, .5);
     opacity: 0;
-    transition: all .8s;
 
     &--article {
       display: flex;
@@ -117,12 +116,11 @@
       margin: 0 .6em;
       padding: 0.5em .5em;
       position: relative;
-      transform: translateY(-50px);
+      transform: scale(0) translateY(-50px);
       border-radius: 30px;
       background: $whiteSmoke;
       box-shadow: 7px 6px 10px rgba(0, 0, 0, 0.32),
       inset 1px 1px 1px rgba(0, 0, 0, 0.4);
-      transition: all .5s;
       opacity: 0;
     }
 
@@ -160,11 +158,40 @@
 .m-active {
   opacity: 1;
   z-index: 1;
-  transition: all .5s ease-in-out;
 }
 
-.is-none {
-  display: none;
+.realisation__modals--article.m-active {
+  //animation: growFromCenter .8s;
+  transform: scale(1) translate(0, -50px);
+  transition: transform 1s;
+}
+//fonctionne avec le settimeout sur sont parent realisation__modals en js
+.realisation__modals--article.is-none {
+  position: absolute;
+  z-index: -1;
+  transition:transform .8s, all 1s;
+}
+
+
+@keyframes growFromCenter {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1) translate(0, -50px);
+
+  }
+}
+//TODO revenir sur l'animation pour quitté le modal, fonctionne pas actuellement
+//Une autre animation provisoire est en place juste au dessus.
+@keyframes reduceFromCenter {
+  from {
+    transform: scale(1) translate(0, -50px);
+  }
+  to {
+    transform: scale(0) translate(0, -50px);
+
+  }
 }
 
 @keyframes KeySlideFromRight {

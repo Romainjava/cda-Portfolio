@@ -122,9 +122,10 @@ header {
 
 .rvdimage {
   display: flex;
-  width: 350px;
+  width: 374px;
   justify-content: center;
-  position: relative; }
+  position: relative;
+  margin-bottom: 10%; }
   .rvdimage__image {
     width: 200px;
     height: 200px;
@@ -214,8 +215,7 @@ header {
     bottom: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    transition: all .8s; }
+    opacity: 0; }
     .realisation__modals--article {
       display: flex;
       flex-direction: column;
@@ -225,11 +225,10 @@ header {
       margin: 0 .6em;
       padding: 0.5em .5em;
       position: relative;
-      transform: translateY(-50px);
+      transform: scale(0) translateY(-50px);
       border-radius: 30px;
       background: #f3f3f3;
       box-shadow: 7px 6px 10px rgba(0, 0, 0, 0.32), inset 1px 1px 1px rgba(0, 0, 0, 0.4);
-      transition: all .5s;
       opacity: 0; }
     .realisation__modals--img {
       width: 100%;
@@ -256,17 +255,82 @@ header {
 
 .m-active {
   opacity: 1;
-  z-index: 1;
-  transition: all .5s ease-in-out; }
+  z-index: 1; }
 
-.is-none {
-  display: none; }
+.realisation__modals--article.m-active {
+  transform: scale(1) translate(0, -50px);
+  transition: transform 1s; }
+
+.realisation__modals--article.is-none {
+  position: absolute;
+  z-index: -1;
+  transition: transform .8s, all 1s; }
+
+@keyframes growFromCenter {
+  from {
+    transform: scale(0); }
+  to {
+    transform: scale(1) translate(0, -50px); } }
+
+@keyframes reduceFromCenter {
+  from {
+    transform: scale(1) translate(0, -50px); }
+  to {
+    transform: scale(0) translate(0, -50px); } }
 
 @keyframes KeySlideFromRight {
   from {
     transform: translate(120vw, -50px); }
   to {
     transform: translate(0, -50px); } }
+
+.veille {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 375px; }
+  .veille__bloc {
+    display: block;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform: translateY(20px); }
+    .veille__bloc--a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%; }
+
+.veille__img--circle1 {
+  position: absolute;
+  animation: rotate 22s linear infinite; }
+
+.veille__img--circle2 {
+  position: absolute;
+  animation: rotate 22s linear infinite; }
+
+.veille__img--circle3 {
+  position: absolute; }
+
+.veille__bloc--img {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 50%;
+  top: calc(50% - 45%);
+  left: calc(50% - 45%); }
+
+.last {
+  margin-bottom: 10%; }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0); }
+  50% {
+    transform: rotate(180deg); }
+  100% {
+    transform: rotate(360deg); } }
 
 .footer {
   display: flex;

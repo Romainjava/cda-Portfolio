@@ -13,7 +13,7 @@
                 <a href="index.php?loc=veille"><img src="../public/assets/icon/m_vei.png"> Veille</a>
             </li>
             <li>
-                <a href="index.php?loc=cv"><img src="../public/assets/icon/m_cv.png"> CV</a>
+                <a href="../public/veille/RVD_CV_DEV.pdf"><img src="../public/assets/icon/m_cv.png"> CV</a>
             </li>
         <?php endif ?>
 
