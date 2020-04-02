@@ -1,108 +1,234 @@
 header {
-    background: $headerColor;
-    padding: 0.8rem 0;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    font-size: 0.9rem;
+  background: $headerColor;
+  padding: 0.8rem 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-size: 0.9rem;
 }
 
 .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+
+  &__left {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    width: 250px;
 
+    & > ul > li:first-child {
+      display: flex;
+      align-items: center;
 
-    &__left {
-        display: flex;
-        justify-content: center;
-        width: 250px;
-
-        &>ul>li:first-child {
-            display: flex;
-            align-items: center;
-
-            & span {
-                margin-right: 2%;
-            }
-        }
-
-
-        &>ul>li:last-child {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            & span {
-                margin-right: 2%;
-            }
-        }
+      & span {
+        margin-right: 2%;
+      }
     }
 
-    &__right {
-        width: 110px;
 
-        &>ul {
-            display: flex;
-            justify-content: space-around;
-        }
+    & > ul > li:last-child {
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-        &--linkledin {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-right: 4%;
-        }
-
-        &--github {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+      & span {
+        margin-right: 2%;
+      }
     }
+  }
+
+  &__right {
+    width: 110px;
+
+    & > ul {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    &--linkledin {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 4%;
+    }
+
+    &--github {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 }
 
 .contact {
-    display: grid;
-    grid-template-columns: 70% 30%;
-    margin: 0 1em;
-    padding: 0.2em 0;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  margin: 0 1em;
+  padding: 0.2em 0;
 
-    &__left {
-        display: flex;
-        align-items: center;
+  &__left {
+    display: flex;
+    align-items: center;
 
-        &--logo {
-            padding: 1%;
-        }
-
-        &--text {
-            display: flex;
-            flex-direction: column;
-            margin-left: 2%;
-
-            &>span:last-child {
-                font-size: 1em;
-                color: $blackColor;
-            }
-        }
+    &--logo {
+      padding: 1%;
     }
 
-    &__right {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.2em;
+    &--text {
+      display: flex;
+      flex-direction: column;
+      margin-left: 2%;
 
-        &>a {
-            padding: 0.2em 0.8em;
-            border-radius: 30px;
-            background: $textColor;
-            color: $blackColor;
-        }
+      & > span:last-child {
+        font-size: 1em;
+        color: $blackColor;
+      }
     }
+  }
+
+  &__right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+
+    & > a {
+      padding: 0.2em 0.8em;
+      border-radius: 30px;
+      background: rgba(87, 0, 125, 0.43);
+      color: $blackColor;
+    }
+  }
 }
 
 .doMore {
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+  display: none;
+}
+
+.doMore__dekstop {
+  display: none;
+}
+
+/* Desktop version */
+@media (min-width: 45rem) {
+  .doMore {
+    display: none;
+  }
+  .doMore__dekstop {
+    display: block;
+    width: 100%;
+    height: 50vh;
+
+    &--img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .contact {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+
+    &__left {
+      width: 21%;
+      font-size: 1.6rem;
+    }
+  }
+  nav {
+    display: block;
+  }
+
+  .navbar-global-wrapper-ul {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+    padding: 4rem 0;
+  }
+
+  .navbar-wrapper-link {
+    display: flex;
+    place-content: space-around;
+    place-items: center;
+    width: 90%;
+
+  }
+
+  .navbar-wrapper-link > * {
+    display: block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background: whitesmoke;
+    border-radius: 50%;
+    text-align: center;
+    /* Nota bene NE JAMAIS USE DE MARGIN POUR ESPACER DES ELEMENTS ENTRE EUX OU
+    USE EN % UNIQUEMENT THANKS FLEX
+    */
+  }
+
+  .navbar-wrapper-link > li::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background: $titleColor;
+    opacity: 0.3;
+    top: 25%;
+    left: 25%;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .navbar-wrapper-link > li:hover::before {
+    transition: .3s;
+    opacity: 1;
+  }
+
+  .navbar-wrapper-link > li > h3 {
+    color: rgba(0, 0, 0, .6);
+  }
+
+
+  .navbar-wrapper-link > li::after {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    background: rgba(87, 0, 125, 0.43);
+    top: 5%;
+    left: 5%;
+    border-radius: 50%;
+    opacity: 0;
+  }
+
+  .navbar-wrapper-link > li:hover::after {
+    transition: .3s;
+    opacity: 1;
+  }
+
+  .navbar-wrapper-link > li a {
+    display: block;
+    /* par defaut a est en display inline du coup pour la taille > dblock */
+    position: relative;
+    /*obliger de le mettre en relative pour que le link soit au dessus des speudo elements pour clické */
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+
+  .navbar-wrapper-link > li a:hover {
+    border-bottom: 2px solid $titleColor;
+    margin-top: 10px;
+    width: 70px;
+    left: 14%;
+  }
+
 }

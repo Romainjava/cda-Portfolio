@@ -13,8 +13,18 @@ serif;
 @import 'presentation';
 @import 'realisation';
 @import 'veille';
+@import 'contact';
 @import 'footer';
 
 .isnone {
     display: none;
+}
+
+@media (min-width: 45rem) {
+    main {
+        background-color: $whiteSmoke;
+    }
+    .rvdimage {
+        display: none;
+    }
 }

@@ -21,6 +21,42 @@
             <span class="realisation__bloc--btn">+</span>
         </article>
     </div>
+
+    <div class="realisation__dekstop">
+
+        <article class="realisation__dekstop--article" data-id="1">
+            <img src="../public/assets/images/romain_dekstop.png" alt="" class="realisation__dekstop--img">
+            <div class="realisation__dekstop--bloc">
+                <h2 class="realisation__dekstop--title">Krav Maga</h2>
+                <span class="realisation__dekstop--resume">Projet d'étude sur la réalisation d'un site vitrine...</span>
+            </div>
+        </article>
+
+        <article class="realisation__dekstop--article" data-id="2">
+            <img src="../public/assets/images/m_krav.png" alt="" class="realisation__dekstop--img">
+            <div class="realisation__dekstop--bloc">
+                <h2 class="realisation__dekstop--title">2</h2>
+                <span class="realisation__dekstop--resume">Projet d'étude sur la réalisation d'un site vitrine...</span>
+            </div>
+        </article>
+
+        <article class="realisation__dekstop--article" data-id="3">
+            <img src="../public/assets/images/m_krav.png" alt="" class="realisation__dekstop--img">
+            <div class="realisation__dekstop--bloc">
+                <h2 class="realisation__dekstop--title">3</h2>
+                <span class="realisation__dekstop--resume">Projet d'étude sur la réalisation d'un site vitrine...</span>
+            </div>
+        </article>
+
+        <article class="realisation__dekstop--article" data-id="4">
+            <img src="../public/assets/images/m_krav.png" alt="" class="realisation__dekstop--img">
+            <div class="realisation__dekstop--bloc">
+                <h2 class="realisation__dekstop--title">3</h2>
+                <span class="realisation__dekstop--resume">Projet d'étude sur la réalisation d'un site vitrine...</span>
+            </div>
+        </article>
+
+    </div>
     <div class="realisation__btn">
         <span class="realisation__btn--1 btn active" data-target="1"></span>
         <span class="realisation__btn--2 btn" data-target="2"></span>

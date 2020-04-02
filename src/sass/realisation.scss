@@ -165,11 +165,12 @@
   transform: scale(1) translate(0, -50px);
   transition: transform 1s;
 }
+
 //fonctionne avec le settimeout sur sont parent realisation__modals en js
 .realisation__modals--article.is-none {
   position: absolute;
   z-index: -1;
-  transition:transform .8s, all 1s;
+  transition: transform .8s, all 1s;
 }
 
 
@@ -182,6 +183,7 @@
 
   }
 }
+
 //TODO revenir sur l'animation pour quitté le modal, fonctionne pas actuellement
 //Une autre animation provisoire est en place juste au dessus.
 @keyframes reduceFromCenter {
@@ -202,4 +204,73 @@
     transform: translate(0, -50px);
   }
 
+}
+
+.realisation__dekstop {
+  display: none;
+}
+
+@media (min-width: 45rem) {
+  .realisation {
+    display: flex;
+
+    &__container {
+      display: none;
+    }
+
+    &__dekstop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 60rem;
+      height: 70vh;
+      position: relative;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 25rem;
+        height: 25rem;
+        position: absolute;
+        top: 58%;
+        left: 50%;
+        background-color: $whiteColor;
+        border: solid 1px #c89446;
+        transform: translate(-50%, -260px) rotate(45deg);
+      }
+
+      &--article {
+        display: flex;
+        width: 400px;
+        position: relative;
+        background-color: $whiteColor;
+
+
+        &:nth-child(even){
+          flex-direction: row-reverse;
+        }
+      }
+      &--bloc {
+
+      }
+      &--img {
+        display: flex;
+        width: 200px;
+        height: 110px;
+        min-width: 200px;
+        object-fit: cover;
+      }
+    }
+
+
+    &__btn {
+      padding-bottom: 0;
+      margin: 1% 0;
+    }
+
+    &__modals {
+
+    }
+  }
 }

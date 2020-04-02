@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
         btn.addEventListener('click', function () {
             setTimeout(function () {
                 r_bloc_modal.classList.remove('m-active');
-            },1000);
+            }, 1000);
             r_modals_article.forEach(article => {
                 article.classList.remove('m-active');
                 article.classList.add('is-none');
