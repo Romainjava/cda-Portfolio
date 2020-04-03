@@ -141,73 +141,78 @@ document.addEventListener('DOMContentLoaded', function () {
             burger_spanTwo.style.transform = 'rotate(0)';
             burger_spanThree.style.display = 'block';
         }
-    })
+    });
 
     //== Part realisation ==//
     const r_btn = document.querySelectorAll(".btn");
-    const r_bloc = document.querySelectorAll('.realisation__bloc');
-    const r_trigger_modal = document.querySelectorAll('.realisation__bloc--btn');
+    let r_bloc = document.querySelectorAll('.realisation__bloc');
+    let r_trigger_modal = document.querySelectorAll('.realisation__bloc--btn');
     const r_bloc_modal = document.querySelector('.realisation__modals');
     const r_remove_modal = document.querySelectorAll('.realisation__modals--btn');
-    const r_modals_article = document.querySelectorAll('.realisation__modals--article');
+    let r_modals_article = document.querySelectorAll('.realisation__modals--article');
+    const media = window.matchMedia("(min-width: 45rem)");
+
+    if (media.matches) {
+        r_bloc = document.querySelectorAll('.realisation__dekstop--article');
+        r_trigger_modal = document.querySelectorAll('.realisation__dekstop--article');
+    }
 
 
-    r_trigger_modal.forEach(btn => {
-        btn.addEventListener('click', function () {
-            //recupére l'attribut du parent
-            let target = "modal-" + btn.parentNode.getAttribute('data-id');
 
-            r_bloc_modal.classList.add('m-active');
-            r_modals_article.forEach(article => {
-                if (article.id === target) {
-                    article.classList.remove('is-none');
-                    article.classList.add('m-active');
-                } else {
-                    article.classList.add('is-none');
-                    article.classList.remove('m-active');
-                }
-            })
+        r_trigger_modal.forEach(btn => {
+            btn.addEventListener('click', function () {
+                //recupére l'attribut du parent
+                let target = "modal-" + btn.parentNode.getAttribute('data-id');
 
-        });
-    });
-
-    r_remove_modal.forEach(btn => {
-        btn.addEventListener('click', function () {
-            setTimeout(function () {
-                r_bloc_modal.classList.remove('m-active');
-            }, 1000);
-            r_modals_article.forEach(article => {
-                article.classList.remove('m-active');
-                article.classList.add('is-none');
+                r_bloc_modal.classList.add('m-active');
+                r_modals_article.forEach(article => {
+                    if (article.id === target) {
+                        article.classList.remove('is-none');
+                        article.classList.add('m-active');
+                    } else {
+                        article.classList.add('is-none');
+                        article.classList.remove('m-active');
+                    }
+                })
             });
-
         });
-    });
 
-    r_btn.forEach(btn => {
-        btn.addEventListener('click', function (event) {
-            event.preventDefault();
-            //supprime la class active sur les btn qui l'ont
-            document.querySelectorAll(".btn.active").forEach(b => {
-                    b.classList.remove('active');
-                }
-            );
-            btn.classList.add('active');
-            let target = this.getAttribute("data-target");
-            r_bloc.forEach(element => {
-                //me permet de switch les réalisation avec les boutons du home caroussel
-                //J'ajoute un effet css dessus
-                if (element.getAttribute('data-id') === target) {
-                    element.classList.remove('target');
-                    element.classList.add('slideFromRight');
-                } else {
-                    element.classList.remove('slideFromRight');
-                    element.classList.add('target');
-                }
+        r_remove_modal.forEach(btn => {
+            btn.addEventListener('click', function () {
+                setTimeout(function () {
+                    r_bloc_modal.classList.remove('m-active');
+                }, 1000);
+                r_modals_article.forEach(article => {
+                    article.classList.remove('m-active');
+                    article.classList.add('is-none');
+                });
+
+            });
+        });
+
+        r_btn.forEach(btn => {
+            btn.addEventListener('click', function (event) {
+                event.preventDefault();
+                //supprime la class active sur les btn qui l'ont
+                document.querySelectorAll(".btn.active").forEach(b => {
+                        b.classList.remove('active');
+                    }
+                );
+                btn.classList.add('active');
+                let target = this.getAttribute("data-target");
+                r_bloc.forEach(element => {
+                    //me permet de switch les réalisation avec les boutons du home caroussel
+                    //J'ajoute un effet css dessus
+                    if (element.getAttribute('data-id') === target) {
+                        element.classList.remove('target');
+                        element.classList.add('slideFromRight');
+                    } else {
+                        element.classList.remove('slideFromRight');
+                        element.classList.add('target');
+                    }
+                })
             })
         })
-    })
-
 
 });
 

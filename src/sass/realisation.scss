@@ -213,6 +213,7 @@
 @media (min-width: 45rem) {
   .realisation {
     display: flex;
+    overflow-x: hidden;
 
     &__container {
       display: none;
@@ -236,7 +237,7 @@
         top: 58%;
         left: 50%;
         background-color: $whiteColor;
-        border: solid 1px #c89446;
+        border: solid 1px $titleColor;
         transform: translate(-50%, -260px) rotate(45deg);
       }
 
@@ -252,7 +253,14 @@
         }
       }
       &--bloc {
+        margin-left: 2%;
+        line-height: 1.4;
+        color: $blackColor;
+        opacity: .8;
 
+        &:nth-child(even){
+          margin-right: 2%;
+        }
       }
       &--img {
         display: flex;

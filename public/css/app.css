@@ -430,7 +430,8 @@ nav {
 
 @media (min-width: 45rem) {
   .realisation {
-    display: flex; }
+    display: flex;
+    overflow-x: hidden; }
     .realisation__container {
       display: none; }
     .realisation__dekstop {
@@ -450,7 +451,7 @@ nav {
         top: 58%;
         left: 50%;
         background-color: #ffffff;
-        border: solid 1px #c89446;
+        border: solid 1px #57007D;
         transform: translate(-50%, -260px) rotate(45deg); }
       .realisation__dekstop--article {
         display: flex;
@@ -459,6 +460,13 @@ nav {
         background-color: #ffffff; }
         .realisation__dekstop--article:nth-child(even) {
           flex-direction: row-reverse; }
+      .realisation__dekstop--bloc {
+        margin-left: 2%;
+        line-height: 1.4;
+        color: #000;
+        opacity: .8; }
+        .realisation__dekstop--bloc:nth-child(even) {
+          margin-right: 2%; }
       .realisation__dekstop--img {
         display: flex;
         width: 200px;
