@@ -158,61 +158,66 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
+    r_trigger_modal.forEach(btn => {
+        btn.addEventListener('click', function () {
+            //recupére l'attribut du parent
+            let target = null;
+            if (media.matches) {
+                target = "modal-" + btn.getAttribute('data-id');
+                console.log(target, btn)
+            } else {
+                target = "modal-" + btn.parentNode.getAttribute('data-id');
+            }
 
-        r_trigger_modal.forEach(btn => {
-            btn.addEventListener('click', function () {
-                //recupére l'attribut du parent
-                let target = "modal-" + btn.parentNode.getAttribute('data-id');
-
-                r_bloc_modal.classList.add('m-active');
-                r_modals_article.forEach(article => {
-                    if (article.id === target) {
-                        article.classList.remove('is-none');
-                        article.classList.add('m-active');
-                    } else {
-                        article.classList.add('is-none');
-                        article.classList.remove('m-active');
-                    }
-                })
-            });
-        });
-
-        r_remove_modal.forEach(btn => {
-            btn.addEventListener('click', function () {
-                setTimeout(function () {
-                    r_bloc_modal.classList.remove('m-active');
-                }, 1000);
-                r_modals_article.forEach(article => {
-                    article.classList.remove('m-active');
+            r_bloc_modal.classList.add('m-active');
+            r_modals_article.forEach(article => {
+                if (article.id === target) {
+                    article.classList.remove('is-none');
+                    article.classList.add('m-active');
+                } else {
                     article.classList.add('is-none');
-                });
-
-            });
+                    article.classList.remove('m-active');
+                }
+            })
         });
+    });
 
-        r_btn.forEach(btn => {
-            btn.addEventListener('click', function (event) {
-                event.preventDefault();
-                //supprime la class active sur les btn qui l'ont
-                document.querySelectorAll(".btn.active").forEach(b => {
-                        b.classList.remove('active');
-                    }
-                );
-                btn.classList.add('active');
-                let target = this.getAttribute("data-target");
-                r_bloc.forEach(element => {
-                    //me permet de switch les réalisation avec les boutons du home caroussel
-                    //J'ajoute un effet css dessus
-                    if (element.getAttribute('data-id') === target) {
-                        element.classList.remove('target');
-                        element.classList.add('slideFromRight');
-                    } else {
-                        element.classList.remove('slideFromRight');
-                        element.classList.add('target');
-                    }
-                })
+    r_remove_modal.forEach(btn => {
+        btn.addEventListener('click', function () {
+            setTimeout(function () {
+                r_bloc_modal.classList.remove('m-active');
+            }, 1000);
+            r_modals_article.forEach(article => {
+                article.classList.remove('m-active');
+                article.classList.add('is-none');
+            });
+
+        });
+    });
+
+    r_btn.forEach(btn => {
+        btn.addEventListener('click', function (event) {
+            event.preventDefault();
+            //supprime la class active sur les btn qui l'ont
+            document.querySelectorAll(".btn.active").forEach(b => {
+                    b.classList.remove('active');
+                }
+            );
+            btn.classList.add('active');
+            let target = this.getAttribute("data-target");
+            r_bloc.forEach(element => {
+                //me permet de switch les réalisation avec les boutons du home caroussel
+                //J'ajoute un effet css dessus
+                if (element.getAttribute('data-id') === target) {
+                    element.classList.remove('target');
+                    element.classList.add('slideFromRight');
+                } else {
+                    element.classList.remove('slideFromRight');
+                    element.classList.add('target');
+                }
             })
         })
+    })
 
 });
 

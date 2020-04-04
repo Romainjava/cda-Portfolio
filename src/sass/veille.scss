@@ -61,3 +61,23 @@
     transform: rotate(360deg);
   }
 }
+
+@media (min-width: 45rem) {
+  .veille {
+
+    max-width: 100%;
+
+
+    & > div:nth-child(1) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 5% 0;
+    }
+  }
+  .last {
+    margin-bottom: 0;
+  }
+}

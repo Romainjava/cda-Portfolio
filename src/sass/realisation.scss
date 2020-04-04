@@ -134,6 +134,11 @@
 
     &--resume {
       line-height: 1.6;
+
+      & > a {
+        color: $blackColor;
+      }
+
     }
 
     &--btn {
@@ -211,6 +216,11 @@
 }
 
 @media (min-width: 45rem) {
+  /* ici les trois petits boutons pour le carousel, désactivé pour le moment */
+  /* travail à faire en js pour la section 2 et 3 pour dekstop */
+  .realisation__btn {
+    display: none;
+  }
   .realisation {
     display: flex;
     overflow-x: hidden;
@@ -246,22 +256,26 @@
         width: 400px;
         position: relative;
         background-color: $whiteColor;
+        box-shadow: 4px 4px 9px rgba(0, 0, 0, .6),
+        -4px -4px 9px rgba(255, 255, 255, .7);
+        cursor: pointer;
 
-
-        &:nth-child(even){
+        &:nth-child(even) {
           flex-direction: row-reverse;
         }
       }
+
       &--bloc {
         margin-left: 2%;
         line-height: 1.4;
         color: $blackColor;
         opacity: .8;
 
-        &:nth-child(even){
+        &:nth-child(even) {
           margin-right: 2%;
         }
       }
+
       &--img {
         display: flex;
         width: 200px;
@@ -278,7 +292,26 @@
     }
 
     &__modals {
+      width: 100%;
+      height: 100%;
 
+      &--article {
+        width: 900px;
+      }
+
+      &--btn {
+        position: absolute;
+        top: 88%;
+        margin-top: 0;
+      }
+
+      &--resume {
+        margin-bottom: 2%;
+      }
     }
+  }
+
+  .realisation__modals--article.m-active {
+    transform: scale(1) translate(0, 0);
   }
 }

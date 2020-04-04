@@ -269,7 +269,6 @@ nav {
       margin-left: 5%; }
   .presentation__dekstop--article {
     display: block;
-    height: 35vh;
     position: relative;
     margin: 0 .6em;
     padding: 0.5em 0;
@@ -379,6 +378,8 @@ nav {
       margin-bottom: calc(0.5em + .5vh); }
     .realisation__modals--resume {
       line-height: 1.6; }
+      .realisation__modals--resume > a {
+        color: #000; }
     .realisation__modals--btn {
       display: flex;
       justify-content: center;
@@ -429,6 +430,10 @@ nav {
   display: none; }
 
 @media (min-width: 45rem) {
+  /* ici les trois petits boutons pour le carousel, désactivé pour le moment */
+  /* travail à faire en js pour la section 2 et 3 pour dekstop */
+  .realisation__btn {
+    display: none; }
   .realisation {
     display: flex;
     overflow-x: hidden; }
@@ -457,7 +462,9 @@ nav {
         display: flex;
         width: 400px;
         position: relative;
-        background-color: #ffffff; }
+        background-color: #ffffff;
+        box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.6), -4px -4px 9px rgba(255, 255, 255, 0.7);
+        cursor: pointer; }
         .realisation__dekstop--article:nth-child(even) {
           flex-direction: row-reverse; }
       .realisation__dekstop--bloc {
@@ -475,7 +482,20 @@ nav {
         object-fit: cover; }
     .realisation__btn {
       padding-bottom: 0;
-      margin: 1% 0; } }
+      margin: 1% 0; }
+    .realisation__modals {
+      width: 100%;
+      height: 100%; }
+      .realisation__modals--article {
+        width: 900px; }
+      .realisation__modals--btn {
+        position: absolute;
+        top: 88%;
+        margin-top: 0; }
+      .realisation__modals--resume {
+        margin-bottom: 2%; }
+  .realisation__modals--article.m-active {
+    transform: scale(1) translate(0, 0); } }
 
 .veille {
   display: flex;
@@ -525,6 +545,19 @@ nav {
   100% {
     transform: rotate(360deg); } }
 
+@media (min-width: 45rem) {
+  .veille {
+    max-width: 100%; }
+    .veille > div:nth-child(1) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 5% 0; }
+  .last {
+    margin-bottom: 0; } }
+
 .mail {
   display: flex;
   flex-direction: column;
@@ -542,9 +575,26 @@ nav {
       border: #ffffff;
       padding: 1rem;
       margin: 5% 0;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25); }
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+      cursor: pointer; }
     .mail__form--btn:active {
       box-shadow: inset 4px 4px 8px rgba(102, 98, 98, 0.5), inset -6px -6px 10px white; }
+
+@media (min-width: 45rem) {
+  .mail {
+    margin-top: 0;
+    padding-top: 2%;
+    align-items: center; }
+    .mail > h3 {
+      margin: 0 0 .5% 0;
+      transform: translateX(-280px); }
+    .mail__form--area {
+      width: 40rem;
+      border-radius: 10px;
+      background-color: gray;
+      transition: all .4s; }
+      .mail__form--area:focus {
+        background-color: #ffffff; } }
 
 .footer {
   display: flex;
