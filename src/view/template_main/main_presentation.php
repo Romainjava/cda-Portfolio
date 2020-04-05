@@ -10,10 +10,10 @@
         <p class="presentation__article--first">Les méthodologies BEM/OOCSS pour les conventions de nommage et les
             principes de l'inventeur du atomic design "Bradfrost" m'ont amené une
             réflexion plus profonde sur les méthodes de travail en front-end.
-            Je travail en cherchant toujours la meilleur expérience utilisateur, design UI/UX.</p>
+            Je travaille en cherchant toujours la meilleure expérience utilisateur, design UI/UX.</p>
         <p class="presentation__article--first">Le titre concepteur d'application, nous apprend la modélisation
-            conceptuel qui apporte une réflexion poussé avant de se plonger dans le code.</p>
-        <p class="presentation__article--two">J'ai très vite compris que ce métier demande une réel PASSION. Tout comme
+            conceptuel qui apporte une réflexion poussée avant de se plonger dans le code.</p>
+        <p class="presentation__article--two">J'ai très vite compris que ce métier demande une réelle PASSION. Tout comme
             mon ancien métier, cuisinier, qui est un métier exigent , le métier de
             développeur demande rigueur et autonomie.</p>
     </article>
@@ -36,10 +36,10 @@
         <p class="presentation__dekstop--first">Les méthodologies BEM/OOCSS pour les conventions de nommage et les
             principes de l'inventeur du atomic design "Bradfrost" m'ont amené une
             réflexion plus profonde sur les méthodes de travail en front-end.
-            Je travail en cherchant toujours la meilleur expérience utilisateur, design UI/UX.</p>
+            Je travaille en cherchant toujours la meilleure expérience utilisateur, design UI/UX.</p>
         <p class="presentation__dekstop--first">Le titre concepteur d'application, nous apprend la modélisation
-            conceptuel qui apporte une réflexion poussé avant de se plonger dans le code,</p>
-        <p class="presentation__dekstop--two">J'ai très vite compris que ce métier demande une réel PASSION. Tout comme
+            conceptuelle qui apporte une réflexion poussée avant de se plonger dans le code.</p>
+        <p class="presentation__dekstop--two">J'ai très vite compris que ce métier demande une réelle PASSION. Tout comme
             mon ancien métier, cuisinier, qui est un métier exigent , le métier de
             développeur demande rigueur et autonomie.</p>
     </article>

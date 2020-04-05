@@ -78,12 +78,12 @@
             <img src="../public/assets/images/d_krav.png" alt="" class="realisation__modals--img">
             <h2 class="realisation__bloc--title">Krav Maga</h2>
             <span class="realisation__modals--resume">
-                Projet d'étude sur la réalisation d'un site vitrine d'un client pour leurs club de sport.
+                Projet d'étude sur la réalisation d'un site vitrine d'un client pour leur club de sport.
             </span>
             <span class="realisation__modals--resume">
-                Suite à une charte graphique établis et une brève discussion avec le client sur l'idée du site, le site
+                Suite à une charte graphique établie et une brève discussion avec le client sur l'idée du site, le site
                 devait être construit en deux semaines sans librairie front-end et un from-scratch était en pré-requis,
-                la principale difficulté étais d'avoir des réponses rapides du client.
+                la principale difficulté était d'avoir des réponses rapides du client.
             </span>
             <span class="realisation__modals--resume">
                 Lien de la maquette établis :
@@ -108,7 +108,7 @@
                 sociaux</h2>
             <span class="realisation__modals--resume">Objectif : Développer un site front-end responsive pour
                                                         une auto-entrepreneuse avec création de carte
-                                                        de visite ainsi que du logo de l'entreprise</span>
+                                                        de visite ainsi que du logo de l'entreprise.</span>
             <span class="realisation__modals--resume">Introduction du site :
             Dans le secteur depuis près de 15 ans, j'ai consacré toutes mes études au médico-social, du BEP Carrières Sanitaires
                 et Sociales au Master 2 Gestion des établissements de santé, parcours médico-social,
