@@ -289,7 +289,7 @@ nav {
     flex-direction: column;
     align-items: center;
     width: 270px;
-    height: 270px;
+    height: 320px;
     margin: 0 .6em;
     padding: 0.5em .5em;
     position: relative;
@@ -304,6 +304,8 @@ nav {
       border-radius: 30px;
       margin-bottom: calc(0.5em + .5vh);
       opacity: .8; }
+      .realisation__bloc--img:nth-child(1) {
+        object-position: 2px; }
     .realisation__bloc--btn {
       display: flex;
       justify-content: center;
@@ -316,7 +318,8 @@ nav {
       border-radius: 50%;
       font-size: 2em;
       font-weight: 900;
-      cursor: pointer; }
+      cursor: pointer;
+      transform: translateY(15px); }
   .realisation__btn {
     display: flex;
     justify-content: space-evenly;
@@ -370,6 +373,10 @@ nav {
       background: #f3f3f3;
       box-shadow: 7px 6px 10px rgba(0, 0, 0, 0.32), inset 1px 1px 1px rgba(0, 0, 0, 0.4);
       opacity: 0; }
+      .realisation__modals--article[id="modal-2"] {
+        height: 700px; }
+      .realisation__modals--article[id="modal-4"] {
+        height: 700px; }
     .realisation__modals--img {
       width: 100%;
       height: 244px;
@@ -377,7 +384,8 @@ nav {
       border-radius: 30px;
       margin-bottom: calc(0.5em + .5vh); }
     .realisation__modals--resume {
-      line-height: 1.6; }
+      line-height: 1.6;
+      margin-bottom: 3%; }
       .realisation__modals--resume > a {
         color: #000; }
     .realisation__modals--btn {
@@ -386,7 +394,7 @@ nav {
       align-items: center;
       width: 50px;
       height: 50px;
-      margin-top: 20%;
+      margin-top: 8%;
       box-shadow: 4px 4px 8px rgba(102, 98, 98, 0.5), -6px -6px 10px white;
       padding: .5em;
       background: #f3f3f3;
@@ -460,7 +468,7 @@ nav {
         transform: translate(-50%, -260px) rotate(45deg); }
       .realisation__dekstop--article {
         display: flex;
-        width: 400px;
+        width: 420px;
         position: relative;
         background-color: #ffffff;
         box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.6), -4px -4px 9px rgba(255, 255, 255, 0.7);
@@ -477,7 +485,7 @@ nav {
       .realisation__dekstop--img {
         display: flex;
         width: 200px;
-        height: 110px;
+        height: 115px;
         min-width: 200px;
         object-fit: cover; }
     .realisation__btn {
@@ -488,6 +496,10 @@ nav {
       height: 100%; }
       .realisation__modals--article {
         width: 900px; }
+        .realisation__modals--article[id="modal-2"] {
+          height: 600px; }
+        .realisation__modals--article[id="modal-4"] {
+          height: 600px; }
       .realisation__modals--btn {
         position: absolute;
         top: 88%;
@@ -495,7 +507,10 @@ nav {
       .realisation__modals--resume {
         margin-bottom: 2%; }
   .realisation__modals--article.m-active {
-    transform: scale(1) translate(0, 0); } }
+    transform: scale(1) translate(0, 0); }
+  /* selectionne la deuxieme image du bloc grâce à l'attribut */
+  .realisation__dekstop--article[data-id="2"] > img {
+    object-position: -2px; } }
 
 .veille {
   display: flex;
