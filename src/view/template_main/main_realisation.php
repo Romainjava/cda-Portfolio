@@ -127,7 +127,44 @@
         <article class="realisation__modals--article is-none" id="modal-3">
             <img src="../public/assets/images/d_nestix.png" alt="" class="realisation__modals--img">
             <h2 class="realisation__bloc--title">Projet nestix</h2>
-            <span class="realisation__modals--resume">à venir...</span>
+            <span class="realisation__modals--resume">
+                Veuillez retrouver les ressources des applications web réalisé pour le projet Nestix
+            </span>
+
+            <span class="realisation__modals--resume">Nestix :
+            <a href="https://vandamme.needemand.com/nestix/" target="_blank">Nestix, </a>
+             <a href="https://github.com/Romainjava/cda-Front-office" target="_blank">Github, </a>
+                <a href="https://vandamme.needemand.com/cda-portfolio/public/veille/Wiki%20Laravel%20RVD.pdf"
+                   target="_blank">Wiki personnel, </a>
+
+                <a href="https://www.figma.com/file/DItmuXzag8ffqfk3VQDC0f/Projet-Nestix?node-id=63%3A2"
+                   target="_blank">Maquette, </a>
+
+                <a href="https://vandamme.needemand.com/cda-portfolio/public/veille/CDA.pdf" target="_blank">Présentation oral</a>
+            </span>
+
+
+            <span class="realisation__modals--resume">Back-office :
+            <a href="https://vandamme.needemand.com/cda-Back-office/" target="_blank">Back-office, </a>
+             <a href="https://github.com/Romainjava/cda-Back-office" target="_blank">Github</a>
+            </span>
+
+
+            <span class="realisation__modals--resume">API REST :
+            <a href="https://vandamme.needemand.com/cda-api/api/help" target="_blank">API, </a>
+             <a href="https://github.com/Romainjava/cda-api" target="_blank">Github</a>
+            </span>
+
+
+            <span class="realisation__modals--resume">Video de mon application mobile :
+            <a href="https://www.youtube.com/watch?v=V_eIWF4zEzI&feature=youtu.be"
+               target="_blank">Video mobile, </a>
+             <a href="https://github.com/Romainjava/cda-mobile" target="_blank">Github mobile, </a>
+                 <a href="https://vandamme.needemand.com/cda-portfolio/public/veille/Application%20Android%20Nestix.pdf"
+                    target="_blank">Wiki</a>
+            </span>
+
+
             <span class="realisation__modals--btn">-</span>
         </article>
 
